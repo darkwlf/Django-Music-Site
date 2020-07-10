@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>{{ album.album_title }}</title>
+    <meta charset="utf-8">
+    <style>
+        *{
+            font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <img src="{{ album.album_logo }}" style="height: 600px;width: 600px;">
+    <h1>Title : {{ album.album_title }}</h1>
+    <h1>Singer : {{ album.artist }}</h1>
+    <h1>Genre : {{ album.genre }}</h1>
+</center>
+</body>
+</html>

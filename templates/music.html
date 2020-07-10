@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>{{ title }}</title>
+    <meta charset="utf-8">
+    <style>
+        *{
+            font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+
+        }
+    </style>
+</head>
+<body>
+<center>
+{%  for i in album %}
+    <img src="{{ i.album_logo }}" style="height: 500px;width: 500px;">
+    <h1>Title : {{ i.album_title }}</h1>
+    <h2>Singer : {{ i.artist }}</h2>
+    <h2>Genre : {{ i.genre }}</h2>
+
+    <hr><br><br><br>
+{% endfor %}
+</center>
+</body>
+</html>
