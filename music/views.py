@@ -25,6 +25,7 @@ def detail(request, album_id):
     #txt = Album.objects.filter(id=album_id)
     try:
         context = {
+        'song' : Song().addr,
         'album' : Album.objects.all()[album_id-1],
         'id' : album_id,
         }
