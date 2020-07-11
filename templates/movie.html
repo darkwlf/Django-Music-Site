@@ -1,0 +1,40 @@
+<html>
+<head>
+    <style>
+        *{
+            font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+        }
+    </style>
+    <title>
+        Movie
+    </title>
+    <meta charset="utf-8">
+</head>
+<body>
+<center>
+    {% for i in movie %}
+        <div style="border: solid black;width: 700px;">
+        <img src="{{ i.movie_cover_url }}" style="width:100%;">
+        <br><br>
+        <h1>title : {{ i.movie_title }}</h1>
+        <br>
+        <h3>Rate {{ i.movie_rate }} / 10</h3>
+        <br>
+        <h2>Time : {{ i.movie_length }}</h2>
+        <br>
+        <h2>Genre : {{ i.movie_genre }}</h2>
+        <br>
+        <h1>Producer : {{ i.movie_producer }}</h1>
+        <br>
+        <p>Actors: {{ i.movie_actors }}</p>
+        <br>
+        <h2>Country : {{ i.movie_country }}</h2>
+        <br>
+        <h2>Product Year : {{ i.movie_year }}</h2>
+
+        <p>{{ i.movie_description }}</p>
+        </div>
+    {% endfor %}
+</center>
+</body>
+</html>

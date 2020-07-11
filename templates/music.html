@@ -12,10 +12,10 @@
 <body>
 <center>
 {%  for i in album %}
-    <img src="{{ i.album_logo }}" style="height: 500px;width: 500px;">
-    <h1>Title : {{ i.album_title }}</h1>
-    <h2>Singer : {{ i.artist }}</h2>
-    <h2>Genre : {{ i.genre }}</h2>
+    <img src="{{ i.album_logo }}" style="height: 500px;width: 500px;border-radius: 20px;">
+    <h1> عنوان :   {{ i.album_title }}</h1>
+    <h2> عنوان :   {{ i.artist }}</h2>
+    <h2> ژانر :  {{ i.genre }}</h2>
     <h1><a href="{{ i.id }}">Download</a></h1>
 
     <hr><br><br><br>

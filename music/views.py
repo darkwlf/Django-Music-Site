@@ -3,6 +3,7 @@ from django.shortcuts import (
     HttpResponse,
     HttpResponseRedirect,
     Http404,
+    redirect
 )
 
 from .models import (
@@ -25,14 +26,15 @@ def detail(request, album_id):
     #txt = Album.objects.filter(id=album_id)
     try:
         context = {
-        'song' : Song().addr,
-        'album' : Album.objects.all()[album_id-1],
+        'song' : Song.objects.get(id = album_id),#[album_id-1],
+        'album' : Album.objects.get(id = album_id),
         'id' : album_id,
         }
         return render(request, 'templates/album.html', context)
     except IndexError:
-        raise Http404
+        raise Http404("Album Dosen't Exists")
 
 def main(request):
 
     return render(request, 'templates/index.html')
+

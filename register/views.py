@@ -1,63 +1,52 @@
 from django.shortcuts import render, HttpResponse
 
 from .models import User
-
+from django.views.decorators.csrf import csrf_protect
 from .forms import UserForm, LoginForm
 
+@csrf_protect
 def sign(request):
 
     user = User()
 
-    submitbutton = request.POST.get("submit")
+    username = request.POST.get("username")
 
-    firstname = ''
+    email = request.POST.get("email")
 
-    lastname = ''
+    number = request.POST.get("number")
 
-    emailvalue = ''
+    name = request.POST.get("name")
 
-    form = UserForm(request.POST or None)
+    password = request.POST.get("password")
 
-    if form.is_valid():
 
-        username = form.cleaned_data.get("username")
+    user.username = username
 
-        email = form.cleaned_data.get("email")
+    user.email = email
 
-        number = form.cleaned_data.get("number")
+    user.phone_number = number
 
-        name = form.cleaned_data.get("name")
+    user.name = name
 
-        password = form.cleaned_data.get("password")
+    user.passsword = password
 
-        user.username = username
+    user.save()
 
-        user.email = email
+    request.session['username'] = username
 
-        user.phone_number = number
-
-        user.name = name
-
-        user.passsword = password
-
-        user.save()
-
-        request.session['username'] = username
-
-        request.session['email'] = email
+    request.session['email'] = email
 
 
 
     context = {
                'username' : username,
-               'form': form,
-               'firstname': firstname,
-               'lastname': lastname,
-               'submitbutton': submitbutton,
-               'emailvalue': emailvalue
                }
+    return HttpResponse(f"Welcome User : {username}")
+@csrf_protect
+def register(request):
 
-    return render(request, 'templates/Sign.html', context)
+    return render(request, 'templates/Sign.html', {'username' : request.session['username']})
+
 
 def login(request):
 

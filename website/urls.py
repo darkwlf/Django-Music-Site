@@ -2,11 +2,12 @@ from music.views import (
     music,
     main,
     detail,
-)
-from register.views import sign, login
-from django.contrib import admin, auth
 
+)
+from register.views import sign, login, register
+from django.contrib import admin, auth
 from django.urls import path, include
+from movie.views import movie
 
 urlpatterns = [
 
@@ -18,8 +19,10 @@ urlpatterns = [
 
     path('music/<int:album_id>', detail, name="Album"),
 
-    #path('Sign/', sign, name="sign"),
+    path('Sign/', register, name="sign"),
 
-    #path('Login/', login, name="Login"),
+    path('Sign/Register', sign, name="Register"),
+
+    path('Movie/', movie, name="Movie Index")
 
 ]

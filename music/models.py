@@ -26,4 +26,4 @@ class Song(models.Model):
 
     def __str__(self):
 
-        return 'Name: ' + str(self.song) + '   -    ' + str('Album : ') + str(self.album)
+        return 'Name: ' + str(self.song)

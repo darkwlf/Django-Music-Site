@@ -11,25 +11,13 @@
 </head>
 <body>
 <center>
-<form action="" method="post">
-<head>
-<meta charset="UTF-8">
-<title>User Information Form</title>
-</head>
-<body>
-<form action="" method="POST">
-{% csrf_token %}
-{{ form.as_p }}
-<input type="Submit" name="submit" value="Submit"/>
-</form>
-
-{% if submitbutton == "Submit" %}
-    <h1>Username "{{ username }}" Created Sucsesfully</h1>
-{% endif %}
-
-</body>
-<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'}),_trfd.push({'ap':'cpsh'},{'server':'p3plcpnl0769'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js'></script></html>
-
+<form action="/Sign/Register" method="post">{% csrf_token %}
+<input type="text" name="username" placeholder="username">
+<input type="email" name="email" placeholder="email">
+<input type="number" name="number" placeholder="number">
+<input type="text" name="name" placeholder="name">
+<input type="password" name="password" placeholder="password">
+<input type="submit" value="Register">
 </form>
 </center>
 </body>
