@@ -7,7 +7,7 @@ from music.views import (
 from register.views import sign, login, register
 from django.contrib import admin, auth
 from django.urls import path, include
-from movie.views import movie
+from movie.views import movie, movie_watch
 
 urlpatterns = [
 
@@ -23,6 +23,10 @@ urlpatterns = [
 
     path('Sign/Register', sign, name="Register"),
 
-    path('Movie/', movie, name="Movie Index")
+    path('Movie/', movie, name="Movie Index"),
+
+    path('Movie/<int:movie_id>', movie_watch, name="Movie Watch"),
 
 ]
+
+#TODO Write Rate Model And View For Musics And Movies.
