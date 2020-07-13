@@ -2,6 +2,14 @@
 <head>
     <title>{{ album.album_title }}</title>
     <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="static/bootstrap.min.js"></script>
+    <script src="static/bootstrap.js"></script>
+    <script src="static/jquery.min.js"></script>
+
     <style>
         *{
             font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
@@ -24,6 +32,30 @@
         <source src="{{ i.addr }}">
         </audio>
     {% endfor %}
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<form method="post" action="/music/{{ album.id }}/new-comment">
+    {% csrf_token %}
+    <input type="hidden" name="id" value="{{ album.id }}">
+    <textarea name="comment" placeholder="Leave Your Comment Here"></textarea>
+    <input type="submit" class="btn btn-primary  btn-lg" value="submit">
+
+
+ </form>
+<br><br>
+<div>
+    <center>
+        <p>
+            {% for c in comment %}
+                <br><br><br>
+            {{ c.comment }}
+                <br><br><br>
+            {% endfor %}
+        </p>
+    </center>
+</div>
+
 </center>
 </body>
 </html>

@@ -2,11 +2,17 @@ from music.views import (
     music,
     main,
     detail,
+    comment,
+    search,
 
 )
+
 from register.views import sign, login, register
+
 from django.contrib import admin, auth
+
 from django.urls import path, include
+
 from movie.views import movie, movie_watch
 
 urlpatterns = [
@@ -27,6 +33,15 @@ urlpatterns = [
 
     path('Movie/<int:movie_id>', movie_watch, name="Movie Watch"),
 
+    path('music/<int:num>/new-comment', comment),
+
+    path('music/search', search, name="search")
+
 ]
 
-#TODO Write Rate Model And View For Musics And Movies.
+# TODO Write Rate Model And View For Musics And Movies.
+
+# TODO Write (Like , Dislike) App
+
+# TODO Write Search Application
+

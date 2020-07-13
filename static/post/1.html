@@ -1,0 +1,260 @@
+<html>
+
+<head>
+    <title>شی گرایی پایتون</title>
+    <meta name="description" content="انجام پروژه های وب و پایتونس مسلط به بک اند و فرانت اند و دیزاین و طراحی و سئو و پایتون و الپیک ۱">
+    <meta name="keywords" content="برنامه نویسی , پروژه , وب , طراحی وب , پایتون , پروژه برنامه نویسی , html, css , js , php , flask , python, linux, لینوکس , بک اند , فرانت اند , فلسک">
+    <meta name="author" content="https://darkwlf.github.io">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="بهترین سایت دنیا" />
+    <meta property="og:description" content="انجام پروژه های وب و پایتونس مسلط به بک اند و فرانت اند و دیزاین و طراحی و سئو و پایتون و الپیک ۱">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://darkwlf.github.io">
+    <meta property="og:image" content="https://darkwlf.github.io/index.png">
+    <link rel="icon" href="../index.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="canonical" href="https://darkwlf.github.io">
+    <!--<link rel="stylesheet" href="//css/style.css">-->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        @font-face {
+            font-family: yekan;
+            src: url("z.ttf");
+        }
+        
+        a,
+        b,
+        p,
+        h1,
+        h2,
+        h3 {
+            font-family: yekan !important;
+            font-size: 28px;
+        }
+        
+        @font-face {
+            font-family: awesome;
+            src: url("g.ttf")
+        }
+        
+        @font-face {
+            font-family: fa;
+            src: url("fa-regular-400.ttf")
+        }
+        
+        @font-face {
+            font-family: b;
+            src: url("b.ttf")
+        }
+        
+        body {
+            background-image: url('../bg.jpg');
+        }
+        
+        .flex-container {
+            margin-top: 100px;
+            border-radius: 8px;
+            width: 85%;
+            background-color: white;
+            color: black;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            justify-self: center;
+            justify-items: center;
+            align-items: center;
+            align-self: center;
+            align-content: center;
+        }
+        
+        .flex-container * {
+            margin-top: 25px;
+            width: 90%;
+        }
+    </style>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="direction: rtl !important;">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+                <a class="navbar-brand" href="https://darkwlf.github.io">خانه</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="https://darkwlf.github.io/#post">نمونه کار ها <span class="sr-only">(current)</span></a></li>
+                    <li><a href="https://darkwlf.github.io/#about">درباره من</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://darkwlf.github.io/#media">تماس با من</a></li>
+                    <script>
+                        var elem = document.getElementById("body");
+
+                        function openfull() {
+                            // ## The below if statement seems to work better ## if ((document.fullScreenElement && document.fullScreenElement !== null) || (document.msfullscreenElement && document.msfullscreenElement !== null) || (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+                            if ((document.fullScreenElement !== undefined && document.fullScreenElement === null) || (document.msFullscreenElement !== undefined && document.msFullscreenElement === null) || (document.mozFullScreen !== undefined && !document.mozFullScreen) || (document.webkitIsFullScreen !== undefined && !document.webkitIsFullScreen)) {
+                                if (elem.requestFullScreen) {
+                                    elem.requestFullScreen();
+                                } else if (elem.mozRequestFullScreen) {
+                                    elem.mozRequestFullScreen();
+                                } else if (elem.webkitRequestFullScreen) {
+                                    elem.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+                                } else if (elem.msRequestFullscreen) {
+                                    elem.msRequestFullscreen();
+                                }
+                            } else {
+                                if (document.cancelFullScreen) {
+                                    document.cancelFullScreen();
+                                } else if (document.mozCancelFullScreen) {
+                                    document.mozCancelFullScreen();
+                                } else if (document.webkitCancelFullScreen) {
+                                    document.webkitCancelFullScreen();
+                                } else if (document.msExitFullscreen) {
+                                    document.msExitFullscreen();
+                                }
+                            }
+                        }
+                    </script>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <br><br>
+    <h1 style="text-align:center;color:black;font-family:yekan !important;font-size:50px;">
+        تقاط دسترسی در پایتون
+    </h1>
+    <br>
+
+    <div class="flex-container center-block row">
+        <p style="direction: rtl;font-size:18px;">
+            سلام امروز میخواهیم درباره نقاط دسترسی (access point) ها در پایتون. صحبت کنیم بعضی موقع ها می خواهیم که دسترسی کلاس های فرزند به اتریبیوت ها (خصوصیات) به کلاس پدر محدود بشه پس اینجا میایم و از access point استفاده می کنیم در پایتون 3 نوع access point
+            داریم :
+            <br> Public
+            <br> Private
+            <br> Protected
+            <br> در Protected همون جوری که از اسمش معلوم هست محافظت شده است ولی بازم این نوع خصوصیات قابل دسترسی هستند و حالت نمایشی دارند که به برنامه نویس بگویند که باید مواظب باشه و با دقت ازش استفاده کنه برای این که اون خصوصیت رو Protected بکنید کافی
+            قبل اسمش یک underscore بگذارید مثلا name_ در Public هم که مثل همیشه استفاده میشه بدون هیچ چیز خاصی مثلا name و حالا میرسیم به Private: <br><br>برای Private کردن یک خصوصیت باید دو تا underscore بگذارید ولی فرقش با Protected اینه که دیگه جنبه
+            نمایشی نداره به مثال پایین توجه کنید:
+            <br>
+        </p>
+        <code style="size:40px;font-size: 20px;">
+                <br>
+class Student:
+<br>
+    __name = 'python'  # Private
+    <br>
+    def _iscrazy(self):   # Protected
+    <br>
+        if self.__name == 'PHP':
+        <br>
+            return True
+            <br>
+        return False
+    <br>
+    age = 20  # Public
+
+<br>
+class John(Student):
+<br>
+    pass
+
+<br>
+j = John()
+
+<br>
+print(j.age)
+<br>
+print(j._iscrazy() )
+<br>
+print(j.__name) # We got an error because it is private
+<br>
+#output
+<br>
+20
+<br>
+False
+<br>
+AttributeError: 'John' object has no attribute '__name'
+<br><br>
+</code><br>
+        <p style="direction: rtl;font-size:18px;">
+            همان طور که در کد بالا مشاهده میکنید ما نمیتونیم از کلاس child به Private ها دسترسی داشته باشیم حال با خود می گویید اگر یک نمونه از کلاس پدر بسازیم می توانیم به خصوصیات Private آن دسترسی داشته باشیم ولی این طور نیست! مانند مثال بالا کد را دوباره می نویسیم
+            فقط نمونه و کار هایی که با کلاس فرزند میکردیم را با کلاس پدر می کنیم :
+        </p>
+        <code style="size:40px;font-size: 20px;">
+    <br>
+class Student:
+    __name = 'python'  # Private
+    <br>
+    def _iscrazy(self):   # Protected
+    <br>
+        if self.__name == 'PHP':
+        <br>
+            return True
+            <br>
+        return False
+    <br>
+    age = 20  # Public
+
+<br>
+class John(Student):
+<br>
+    pass
+
+
+<br>
+p = Student()
+<br>
+# Now shoew Student Attributes
+<br>
+print(p.age)
+<br>
+print(p._iscrazy() )
+<br>
+print(p.__name) # We got an error because it is private
+<br>
+#output : 20
+<br>
+False
+<br>
+AttributeError: 'Student' object has no attribute '__name'
+<br>
+</code>
+        <p style="direction: rtl;font-size:18px;">
+            <br><br> در مثال بالا متوجه شدیم که ما نمی توانیم حتی از کلاس پدر به خصوصیت Private آن دسترسی داشته باشیم ولی باید توجه داشته باشیم که در پایتون هیچ چیزی زوری نیست و ما باز هم می توانیم از این خصوصیات در کلاس پدر استفاده کنیم برای این کار
+            کافی است که مانند این الگو عمل کنیم classname__identifier_ پس برای کد بالا می توانیم اینگونه به name__ <br> دسترسی داشته باشیم
+            <br> print(p._Student__name) <br>#output python
+            <br>
+            <br> منبع : pyfarsi
+        </p>
+    </div>
+
+
+
+
+    <!--Footer-->
+
+</body>
+
+</html>

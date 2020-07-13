@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+<center>
+{% for i in albums %}
+    {% if i.album_title == keyword or i.artist == keyword or i.genre == keyword%}
+        <h1>Search Results For : {{ keyword }}</h1>
+        <br><br><br><br>
+        <a href="{{ i.id }}"><img src="{{ i.album_logo }}"></a>
+        <h1> <a href="{{ i.id }}">{{ i.album_title }}</a></h1>
+        <a href="{{ i.id }}"> <h1>{{ i.artist }}</h1></a>
+        <a href="{{ i.id }}"><h1>{{ i.genre }}</h1></a>
+    {% endif %}
+{% endfor %}
+</center>
+</body>
+</html>

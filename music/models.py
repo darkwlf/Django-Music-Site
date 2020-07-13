@@ -27,3 +27,13 @@ class Song(models.Model):
     def __str__(self):
 
         return 'Name: ' + str(self.song)
+
+class Comments(models.Model):
+
+    comment = models.TextField(max_length=1000)
+
+    page = models.CharField(max_length=900, default='')
+
+    def __str__(self):
+
+        return self.comment

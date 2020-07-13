@@ -2,24 +2,47 @@
 <head>
     <title>{{ title }}</title>
     <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
         *{
             font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
 
         }
+        .flex-container{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: space-evenly;
+            justify-items: center;
+            justify-self: center;
+            align-content: space-evenly;
+            align-items: center;
+            align-self: center;
+        }
     </style>
 </head>
 <body>
 <center>
-{%  for i in album %}
-    <img src="{{ i.album_logo }}" style="height: 500px;width: 500px;border-radius: 20px;">
-    <h1> عنوان :   {{ i.album_title }}</h1>
-    <h2> عنوان :   {{ i.artist }}</h2>
-    <h2> ژانر :  {{ i.genre }}</h2>
-    <h1><a href="{{ i.id }}">Download</a></h1>
-
-    <hr><br><br><br>
-{% endfor %}
+<form method="post" action="search">
+    {% csrf_token %}
+<input type="text" name="keyword" placeholder="Keyword To search">
+    <input type="submit" value="search">
+</form>
 </center>
+{%  for i in album %}
+
+    <div class="flex-container">
+        <img src="{{ i.album_logo }}" style="height: 500px;width: 500px;border-radius: 20px;">
+            <h1>{{ i.album_title }}</h1>
+            <h2> {{ i.artist }}</h2>
+            <h2>  {{ i.genre }}</h2>
+    <h2><a href="{{ i.id }}">دانلود</a></h2>
+    </div>
+    <hr><br><br><br><hr>
+
+{% endfor %}
 </body>
 </html>
