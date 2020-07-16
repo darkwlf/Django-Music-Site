@@ -33,16 +33,22 @@
 </form>
 </center>
 {%  for i in album %}
-
-    <div class="flex-container">
-        <img src="{{ i.album_logo }}" style="height: 500px;width: 500px;border-radius: 20px;">
-            <h1>{{ i.album_title }}</h1>
-            <h2> {{ i.artist }}</h2>
-            <h2>  {{ i.genre }}</h2>
-    <h2><a href="{{ i.id }}">دانلود</a></h2>
+    <center>
+    <a href="{{ i.id }}">
+        <div class="flex-container">
+        <a href="{{ i.id }}"><img src="{{ i.album_logo }}" style="height: 500px;width: 500px;border-radius: 20px;">
+        <h2> {{ i.artist }}</h2>
+        <h1>{{ i.album_title }}</h1>
+            <h2>{{ i.genre }}</h2>
+        </a>
     </div>
+        </a>
+
+    </center>
+
     <hr><br><br><br><hr>
 
 {% endfor %}
+
 </body>
 </html>

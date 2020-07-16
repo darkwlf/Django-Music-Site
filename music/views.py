@@ -15,14 +15,26 @@ from .models import (
 
    Comments,
 
+    Artist,
+
 )
+
+from django.core.exceptions import ObjectDoesNotExist
 
 import time
 
 def music(request):
+
+    #ar = Artist.objects.all()
+
+
+
     context = {
-        'album' : Album.objects.all()
+        'album' : Album.objects.all(),
+        'artist' : Artist.objects.all()
+        #'artist_page': page
     }
+
     return render(request, 'templates/music.html', context)
 
 def detail(request, album_id):
@@ -33,17 +45,28 @@ def detail(request, album_id):
         'album' : Album.objects.get(id = album_id),
         'comment' : Comments.objects.filter(page=album_id),
         'id' : album_id,
+        'artist_page' : Artist.objects.get(artist_name=Album.objects.get(id = album_id).artist).id,
         }
         return render(request, 'templates/album.html', context)
     except IndexError:
         raise Http404("Album Dosen't Exists")
+    except ObjectDoesNotExist:
+        context = {
+            'song': 'در حال حاضر آهنگی موجود نیست',#Song.objects.get(id=album_id),  # [album_id-1],
+            'album': Album.objects.get(id=album_id),
+            'id': album_id,
+            'artist_page': Artist.objects.get(artist_name=Album.objects.get(id=album_id).artist).id,
+        }
+        return render(request, 'templates/album.html', context)
     except:
         context = {
             'song': Song.objects.get(id=album_id),  # [album_id-1],
             'album': Album.objects.get(id=album_id),
             'id': album_id,
+            'artist_page': Artist.objects.get(artist_name=Album.objects.get(id = album_id).artist).id,
         }
         return render(request, 'templates/album.html', context)
+
 
 def main(request):
 
@@ -61,7 +84,7 @@ def comment(request, num):
 
     comments.save()
 
-    return HttpResponse("Comment Posted")
+    return redirect('.')
 
 def search(request):
 
@@ -87,6 +110,28 @@ def search(request):
         'keyword' : request.POST.get('keyword'),
     }
 
+
     return render(request, 'templates/search.html', context)
 
 
+def artist(request, name):
+
+    singer = Artist.objects.get(id=name)
+
+    singer_songs = Album.objects.filter(artist=singer.artist_name)
+
+    context = {
+
+        'artist_songs' : singer_songs,
+
+        'artist_name' : singer.artist_name,
+
+        'artist_image' : singer.artist_image,
+
+        'artist_description' : singer.artist_description,
+
+        'id' : Album.objects.filter(id=name),
+
+    }
+
+    return render(request, 'templates/artist.html', context)

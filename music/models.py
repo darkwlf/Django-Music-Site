@@ -12,7 +12,7 @@ class Album(models.Model):
 
     def __str__(self):
 
-        return self.album_title + ' - ' + self.artist
+        return self.album_title
 
 class Song(models.Model):
 
@@ -37,3 +37,15 @@ class Comments(models.Model):
     def __str__(self):
 
         return self.comment
+
+class Artist(models.Model):
+
+    artist_name = models.CharField(max_length=1000, default='')
+
+    artist_image = models.ImageField(upload_to="static/")
+
+    artist_description = models.CharField(max_length=2000, default='')
+
+    def __str__(self):
+
+        return self.artist_name

@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Artist</title>
+    <meta charset="utf-8">
+</head>
+<body>
+<center>
+    <br><br><br><br>
+    <br><br><br><br>
+    <div class="artist"></div>
+<img src="{{ artist_image.url }}">
+    <br><br><br><br>
+    <h1>{{ artist_name }}</h1>
+    <br><br>
+    <p>{{ artist_description }}</p>
+    <br><br><br>
+    {% for i in artist_songs %}
+        <a href="../../music/{{ i.id }}"><p>{{ i }}</p></a>
+    {% endfor %}
+</center>
+</body>
+</html>

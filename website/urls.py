@@ -4,6 +4,7 @@ from music.views import (
     detail,
     comment,
     search,
+    artist
 
 )
 
@@ -23,7 +24,7 @@ urlpatterns = [
 
     path('music/', music, name="Music"),
 
-    path('music/<int:album_id>', detail, name="Album"),
+    path('music/<int:album_id>/', detail),
 
     path('Sign/', register, name="sign"),
 
@@ -35,7 +36,9 @@ urlpatterns = [
 
     path('music/<int:num>/new-comment', comment),
 
-    path('music/search', search, name="search")
+    path('music/search', search, name="search"),
+
+    path('music/artist/<int:name>', artist, name="Artist"),
 
 ]
 
