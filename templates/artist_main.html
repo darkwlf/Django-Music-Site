@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Artists</title>
+    <meta charset="utf-8">
+</head>
+<body>
+<center>
+<form method="post" action="/music/artist/search/">
+    {% csrf_token %}
+<input type="text" name="keyword" placeholder="Keyword To search">
+<input type="submit" value="search">
+</form>
+    <br><br><br>
+    {% for artist in artists %}
+        <img src="{{ artist.artist_image }}">
+        <br><br>
+        <a href="/music/artist/{{ artist.id }}"><h1>{{ artist.artist_name }}</h1></a>
+        <br><br><br><br><br>
+        <br><br><br><br><br>
+        <br><br><br><br><br>
+    {% endfor %}
+</center>
+</body>
+</html>

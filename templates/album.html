@@ -22,14 +22,29 @@
     <h1> عنوان: {{ album.album_title }}      </h1>
     <a href="/music/artist/{{ artist_page }}"><h1> خواننده: {{ album.artist }}</h1></a>
     <h1> ژانر: {{ album.genre }}    </h1>
-
+<br><br>
+<form method="post" action="/music/{{ album.id }}/new-like/">
+    {% csrf_token %}
+<input type="submit" value="like" name="like">
+</form>
+<br><br><br>
+<form method="post" action="/music/{{ album.id }}/new-dislike/">
+    {% csrf_token %}
+<input type="submit" value="dislike" name="dislike">
+</form>
+    <br><br>
+   Likes : {{s}}
+<br><br>
+Dislikes : {{ d }}
+<br><br>
+Percent Of Likes : {{ sd }}%
     <br><br><br><hr>
 {% if album.song_set.all %}
         <h1>آهنگ ها</h1>
 
     {% for i in album.song_set.all %}
         <a href="{{ i.addr }}"><h1>{{ i.song }}.{{ song.file_type }} دانلود </h1></a>
-        <audio controls autoplay>
+        <audio controls>
         <source src="{{ i.addr }}">
         </audio>
     {% endfor %}

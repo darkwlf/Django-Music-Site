@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+<center>
+{% for i in artists %}
+    {% if i.artist_name == keyword %}
+        <h1>Search Results For : {{ keyword }}</h1>
+        <br><br><br><br>
+
+        <br><br>
+
+        <a href="/music/artist/{{ i.id }}"><img src="{{ i.artist_image }}"></a>
+        <h1> <a href="/music/artist/{{ i.id }}">{{ i.artist_name }}</a></h1>
+        <a href="/music/artist/{{ i.id }}"> <h1>{{ i.artist_description }}</h1></a>
+    {% endif %}
+{% endfor %}
+</center>
+</body>
+</html>

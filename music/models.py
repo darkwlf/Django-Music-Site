@@ -42,10 +42,28 @@ class Artist(models.Model):
 
     artist_name = models.CharField(max_length=1000, default='')
 
-    artist_image = models.ImageField(upload_to="static/")
+    artist_image = models.CharField(max_length=5000, default='')
 
     artist_description = models.CharField(max_length=2000, default='')
 
     def __str__(self):
 
         return self.artist_name
+
+class Like(models.Model):
+
+    likes = models.CharField(default='like', max_length=4)
+
+    page = models.IntegerField(default=1)
+
+    def __int__(self):
+
+        return self.likes.count('like')
+
+
+
+class Dislike(models.Model):
+
+    dislikes = models.CharField(default='dislike', max_length=7)
+
+    page = models.IntegerField(default=1)
